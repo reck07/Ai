@@ -1,0 +1,37 @@
+x = 0
+y = 0
+m = 4  # Capacity of the first jug
+n = 3  # Capacity of the second jug
+
+print("Initial state = (0, 0)")
+print("Capacities = (4, 3)")
+print("Goal state = (2, 4)")
+
+while (x != 2):
+    r = int(input("Enter the rule (1: Fill first jug, 2: Fill second jug, 3: Empty first jug, 4: Empty second jug, 5: Pour from first to second, 6: Pour from second to first, 7: Fill first jug from second, 8: Fill second jug from first): "))
+    if (r == 1):
+        x = m
+    elif (r == 2):
+        y = n
+    elif (r == 3):
+        x = 0
+    elif (r == 4):
+        y = 0
+    elif (r == 5):
+        t = n - y
+        y = n
+        x -= t
+    elif (r == 6):
+        t = m - x
+        x = m
+        y -= t
+    elif (r == 7):
+        y += x
+        x = 0
+    elif (r == 8):
+        x += y
+        y = 0
+    else:
+        print("Invalid Rule")
+    break
+print(x, y)
