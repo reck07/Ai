@@ -1,0 +1,29 @@
+import csv
+
+# Number of attributes in the dataset
+num_attribute = 6
+
+# List to store the dataset
+a = []
+
+# Reading the dataset from the CSV file
+with open('s.csv', 'r') as file:
+    
+    reader = csv.reader(file)
+    a = list(reader)
+
+# Initialize the hypothesis with the first positive example
+hypothesis = a[1][:-1]
+
+# Iterate through the dataset
+for i in a:
+    # Check if the example is positive
+    if i[-1] == 'yes':
+        # Update the hypothesis
+        for j in range(num_attribute):
+            if i[j] != hypothesis[j]:
+                hypothesis[j] = '?'
+
+# Print the final hypothesis
+print("The maximally specific hypothesis for the given training examples is:")
+print(hypothesis)
