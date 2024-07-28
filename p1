@@ -20,13 +20,13 @@ def check_winner(board, player):
 def is_board_full(board):
     for row in board:
         for cell in row:
-            if cell == "":
+            if cell == " ":
                 return False
     return True
 
 def main():
     board = [[" " for _ in range(3)] for _ in range(3)]
-    players = ["x", "0"]
+    players = ["X", "O"]
     turn = 0
 
     print("Welcome to Tic-Tac-Toe!")
@@ -39,15 +39,16 @@ def main():
         row = int(input("Enter row (0, 1, or 2): "))
         col = int(input("Enter column (0, 1, or 2): "))
 
-        if board[row][col] == "":
+        if board[row][col] == " ":
             board[row][col] = player
             print_board(board)
             if check_winner(board, player):
                 print(f"Player {player} wins!")
                 break
-        elif is_board_full(board):
-            print("It's a draw!")
-            break
+            elif is_board_full(board):
+                print("It's a draw!")
+                break
+            turn += 1
         else:
             print("That cell is already occupied. Try again.")
 
