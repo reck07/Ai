@@ -1,0 +1,65 @@
+import pandas as pd
+from pgmpy.estimators import MaximumLikelihoodEstimator
+from pgmpy.models import BayesianNetwork
+from pgmpy.inference import VariableElimination
+
+
+data=pd.read_csv(r'heart1.csv')
+
+
+print("first few rows of the dataset:")
+print(data.head())
+print("\n columns in dataset:")
+print(data.columns)
+
+
+model=BayesianNetwork([('age','heartdisease'),
+                       ('gender','heartdisease'),
+                       ('family','heartdisease'),
+                       ('diet','heartdisease'),
+                       ('lifestyle','heartdisease'),
+                       ('cholestrol','heartdisease')])
+
+
+model.fit(data,estimator=MaximumLikelihoodEstimator)
+infer=VariableElimination(model)
+q1=infer.query(variables=['heartdisease'],evidence={'cholestrol':2})
+print("\n query for 'heartdisease' given 'cholestrol=2':")
+print(q1)
+
+
+q2=infer.query(variables=['heartdisease'],evidence={'diet':1})
+print("\n query for 'heartdisease' given 'diet=1':")
+print(q2)
+
+////////////////////////Output :-
+first few rows of the dataset:
+   age  gender  family  diet  lifestyle  cholestrol  heartdisease
+0    0       0       1     1          3           0             1
+1    0       1       1     1          3           0             1
+2    1       0       0     0          2           1             1
+3    4       0       1     1          3           2             0
+4    3       1       1     0          0           2             0
+
+ columns in dataset:
+Index(['age', 'gender', 'family', 'diet', 'lifestyle', 'cholestrol',
+       'heartdisease'],
+      dtype='object')
+
+ query for 'heartdisease' given 'cholestrol=2':
++-----------------+---------------------+
+| heartdisease    |   phi(heartdisease) |
++=================+=====================+
+| heartdisease(0) |              0.5072 |
++-----------------+---------------------+
+| heartdisease(1) |              0.4928 |
++-----------------+---------------------+
+
+ query for 'heartdisease' given 'diet=1':
++-----------------+---------------------+
+| heartdisease    |   phi(heartdisease) |
++=================+=====================+
+| heartdisease(0) |              0.4952 |
++-----------------+---------------------+
+| heartdisease(1) |              0.5048 |
++-----------------+---------------------+
