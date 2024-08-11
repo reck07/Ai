@@ -115,3 +115,12 @@ Q=J(A)
 D("Nodes which give optimal cost are")
 G(A)
 D("\n optimal cost is::",Q)
+
+////outppppput
+Output :-
+Expanding Node: A
+Expanding Node: B
+Nodes which give optimal cost are
+F->9
+ optimal cost is:: 9
+
