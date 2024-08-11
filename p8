@@ -56,3 +56,87 @@ for i in range(epoch):
     print("----epoch-",i+1,"ends-----\n")
 
 
+//////////////Output :-
+------epoch 1 starts-----
+
+input:
+[[2. 9.]
+ [1. 5.]
+ [3. 6.]]
+actual output:
+[[0.92]
+ [0.86]
+ [0.89]]
+predicted output:
+ [[0.92420224]
+ [0.91025558]
+ [0.92643799]]
+----epoch- 1 ends-----
+
+
+------epoch 2 starts-----
+
+input:
+[[2. 9.]
+ [1. 5.]
+ [3. 6.]]
+actual output:
+[[0.92]
+ [0.86]
+ [0.89]]
+predicted output:
+ [[0.92407415]
+ [0.910118  ]
+ [0.92631242]]
+----epoch- 2 ends-----
+
+
+------epoch 3 starts-----
+
+input:
+[[2. 9.]
+ [1. 5.]
+ [3. 6.]]
+actual output:
+[[0.92]
+ [0.86]
+ [0.89]]
+predicted output:
+ [[0.92394623]
+ [0.90998062]
+ [0.92618702]]
+----epoch- 3 ends-----
+
+
+------epoch 4 starts-----
+
+input:
+[[2. 9.]
+ [1. 5.]
+ [3. 6.]]
+actual output:
+[[0.92]
+ [0.86]
+ [0.89]]
+predicted output:
+ [[0.92381847]
+ [0.90984345]
+ [0.92606178]]
+----epoch- 4 ends-----
+
+
+------epoch 5 starts-----
+
+input:
+[[2. 9.]
+ [1. 5.]
+ [3. 6.]]
+actual output:
+[[0.92]
+ [0.86]
+ [0.89]]
+predicted output:
+ [[0.92369089]
+ [0.90970649]
+ [0.9259367 ]]
+----epoch- 5 ends-----
