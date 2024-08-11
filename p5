@@ -27,3 +27,11 @@ for i in a:
 # Print the final hypothesis
 print("The maximally specific hypothesis for the given training examples is:")
 print(hypothesis)
+
+//////output:
+Output :-
+['sunny', 'warm', '?', 'strong', '?', '?']
+
+ the maximally specific hyothesis for a given training examples
+
+['sunny', 'warm', '?', 'strong', '?', '?']
