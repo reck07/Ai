@@ -25,3 +25,21 @@ print(confusion_matrix(y_test,y_pred))
 
 print('classification report:')
 print(classification_report(y_test,y_pred))
+
+//////////////////////////////Output :- 
+feature names: ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+classes:0-iris-setosa,1-iris-versicolour,2-iris-virginica
+confusion matrix:
+[[19  0  0]
+ [ 0 13  0]
+ [ 0  0 13]]
+classification report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        19
+           1       1.00      1.00      1.00        13
+           2       1.00      1.00      1.00        13
+
+    accuracy                                   1.00        45
+   macro avg       1.00      1.00       1.00        45
+weighted avg      1.00     1.00        1.00        45
