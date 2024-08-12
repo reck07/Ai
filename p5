@@ -7,7 +7,7 @@ num_attribute = 6
 a = []
 
 # Reading the dataset from the CSV file
-with open('s.csv', 'r') as file:
+with open('/home/cse/desktop/hyp/enjoysport.csv', 'r') as file:
     
     reader = csv.reader(file)
     a = list(reader)
